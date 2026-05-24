@@ -116,4 +116,5 @@ The `+1` is always needed when counting indices inclusive on both ends.
 ## Problems solved
 | # | Problem | Type | Difficulty |
 |---|---|---|---|
-| 3 | Longest Substring Without Repeating Characters | Variable | Medium |
+| 3   | Longest Substring Without Repeating Characters | Variable | Medium |
+| 121 | Best Time to Buy and Sell Stock               | Variable | Easy   |
