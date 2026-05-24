@@ -47,6 +47,19 @@ def isAnagram(s, t):
 # Space Complexity: O(1) — at most 26 keys (lowercase letters)
 # ============================================================
 
+# ---- Tradeoffs ----
+# This approach (two hashmaps):
+#   Pro: Clear intent — count s and t separately, then compare
+#   Con: Two dictionary allocations; Counter from collections is even simpler
+#
+# Alternative 1 — One hashmap:
+#   Increment for s, decrement for t → check all values == 0 at end
+#   Same O(n) time, slightly less space (one dict instead of two)
+#
+# Alternative 2 — Sort both strings:
+#   sorted(s) == sorted(t) → O(n log n) time, O(1) extra space
+#   Pro: No hashmap needed  Con: Slower time complexity
+
 
 if __name__ == "__main__":
     test_cases = [

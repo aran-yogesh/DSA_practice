@@ -76,6 +76,20 @@ def searchMatrix(matrix, target):
 #   row = mid // n   (integer division gives the row)
 #   col = mid % n    (remainder gives the column)
 
+# ---- Tradeoffs ----
+# This approach (flatten to 1D binary search):
+#   O(log(m*n)) time, O(1) space — optimal for this strict matrix type
+#   Pro: Treats the entire matrix as one sorted array — single binary search
+#
+# Two-pass alternative:
+#   Binary search for the correct row, then binary search within the row
+#   O(log m + log n) = O(log(m*n)) — same complexity but two passes, more code
+#
+# Staircase search (top-right corner):
+#   Move left if too big, down if too small → O(m + n) time
+#   Works on matrices where only rows are sorted (more flexible problem)
+#   Slower than binary search but handles looser matrix constraints
+
 # ---- Where I Needed Assistance ----
 # 1. Approach — tried two for loops O(m*n).
 #    Fix: treat matrix as flat 1D sorted array → binary search O(log(m*n))

@@ -60,6 +60,19 @@ def romanToInt(s):
 # Space Complexity: O(1) — dictionary has fixed 7 keys
 # ============================================================
 
+# ---- Tradeoffs ----
+# This approach (hashmap + subtract when current < next):
+#   O(n) time, O(1) space (only 7 fixed keys in the map — never grows)
+#   Pro: Single-pass rule handles ALL subtraction cases automatically
+#   No need to hardcode IV, IX, XL etc. as special cases
+#
+# Alternative — Hardcode special pairs first:
+#   Check if current + next form a known pair (IV, IX, XL, XC, CD, CM)
+#   More explicit but requires more code and listing all 6 special cases
+#   Same O(n) complexity but less elegant
+#
+# The subtract-when-smaller rule is strictly better — fewer lines, same correctness
+
 # ---- Self Reflection: Where I got stuck ----
 # 1. Subtraction logic — didn't know when to subtract vs add.
 #    Fix: if current value < next value → subtract. That's it.

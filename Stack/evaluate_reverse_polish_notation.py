@@ -80,6 +80,19 @@ def evalRPN(tokens):
 # Space Complexity: O(n) — stack stores up to n numbers
 # ============================================================
 
+# ---- Tradeoffs ----
+# This approach (stack):
+#   O(n) time, O(n) space — optimal and the natural solution for RPN
+#   RPN exists precisely because it can be evaluated with a stack in one pass
+#
+# There is no meaningfully faster alternative — any other method would be
+# equivalent or slower. Stack is the textbook solution.
+#
+# Key Python-specific tradeoff:
+#   Use int(a/b) not a//b for division
+#   a//b rounds toward negative infinity; int(a/b) truncates toward zero
+#   Example: -7//2 = -4 (wrong), int(-7/2) = -3 (correct per problem spec)
+
 # ---- Self Reflection: Where I got stuck ----
 # 1. Checking if token is a number — forgot the pattern.
 #    Fix: use else after all operator checks, or check i not in "+-/*"

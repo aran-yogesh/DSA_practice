@@ -68,6 +68,19 @@ def dailyTemperatures(temperatures):
 # Space Complexity: O(n) — stack can hold up to n indices
 # ============================================================
 
+# ---- Tradeoffs ----
+# This approach (monotonic stack):
+#   O(n) time, O(n) space — each index pushed and popped at most once
+#   Pro: Optimal time complexity
+#
+# Brute force (nested loops):
+#   For each day scan forward to find the next warmer day → O(n²) time, O(1) space
+#   Too slow for large inputs
+#
+# The O(n) space cost is unavoidable — unresolved days must be remembered
+# somewhere until a future warmer day arrives. Stack is the right structure
+# because resolution order is unpredictable (LIFO matches when a big day resolves many)
+
 # ---- Self Reflection: Where I got stuck ----
 # 1. Visualizing the problem — kept thinking two pointers.
 #    Fix: this is NOT two pointers. You need a stack because each

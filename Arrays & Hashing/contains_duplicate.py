@@ -37,6 +37,18 @@ def containsDuplicate(nums):
 # Space Complexity: O(n) — storing the set
 # ============================================================
 
+# ---- Tradeoffs ----
+# This approach (set comparison):
+#   Pro: Simplest code — one line of logic, very readable
+#   Con: O(n) extra space for the set
+#
+# Alternative 1 — Sort first:
+#   Sort array → compare adjacent elements → O(n log n) time, O(1) space
+#   Pro: No extra space  Con: Modifies input, slower time
+#
+# Alternative 2 — Brute force nested loop:
+#   O(n²) time, O(1) space — never use; set approach is strictly better
+
 
 if __name__ == "__main__":
     test_cases = [

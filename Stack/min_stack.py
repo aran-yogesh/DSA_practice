@@ -60,6 +60,19 @@ class MinStack:
 # Space Complexity: O(n) — storing n tuples for n pushes
 # ============================================================
 
+# ---- Tradeoffs ----
+# This approach (store tuples (value, current_min)):
+#   O(1) all operations, O(n) space
+#   Pro: Single structure — no sync issues; min is always one index away
+#   Con: Stores redundant min values even when min doesn't change
+#
+# Two-stack alternative:
+#   One stack for values, one for min values (push to min stack only on new minimum)
+#   Same O(1) operations; slightly less space in practice
+#   Con: Two structures to maintain — must keep them in sync on every pop
+#
+# Both are valid; tuple approach is simpler to reason about
+
 # ---- Self Reflection: Where I got stuck ----
 # 1. Class structure — unsure how to initialise variables and
 #    which self variables to use. Key: always init in __init__

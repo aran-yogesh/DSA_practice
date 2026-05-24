@@ -98,6 +98,20 @@ def largestRectangleArea_optimized(heights):
 # Space Complexity: O(n) — stack
 # ============================================================
 
+# ---- Tradeoffs ----
+# This approach (monotonic stack with (start, height) tuples):
+#   O(n) time, O(n) space — each bar pushed and popped at most once
+#   Pro: Handles left-extension by tracking start index in the tuple
+#
+# Divide and conquer alternative:
+#   Find min bar, split array, recurse → O(n log n) average, O(n²) worst case
+#   Pro: Somewhat intuitive in concept  Con: Slower and harder to implement
+#
+# Brute force (for each bar, scan left and right for boundaries):
+#   O(n²) time, O(1) space — too slow for large inputs
+#
+# Monotonic stack is the standard optimal solution for histogram problems
+
 # ---- Where I Needed Assistance ----
 # 1. Visualizing the problem — hard to see how area=10 comes from bars 5,6
 #    Fix: for each bar, find how far left/right it can extend at its height

@@ -49,6 +49,18 @@ def groupAnagrams(strs):
 # Space Complexity: O(n) — storing all words in the hashmap
 # ============================================================
 
+# ---- Tradeoffs ----
+# This approach (sorted string as key):
+#   Pro: Simple and readable — sorted("eat") == "aet" is intuitive
+#   Con: O(k log k) per word for sorting — adds up for many long words
+#
+# Alternative — Character frequency tuple as key:
+#   Count each of 26 letters → use tuple of counts as key → O(k) per word
+#   Faster for long strings but slightly more code
+#
+# For typical inputs (short words) sorted string is fine.
+# For large inputs with very long words, frequency tuple is faster.
+
 
 if __name__ == "__main__":
     test_cases = [

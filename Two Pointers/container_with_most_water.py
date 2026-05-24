@@ -60,6 +60,17 @@ def maxArea(height):
 # Space Complexity: O(1) — no extra data structures
 # ============================================================
 
+# ---- Tradeoffs ----
+# This approach (two pointers, greedy):
+#   O(n) time, O(1) space — optimal
+#   The greedy choice (always move shorter wall inward) is provably correct
+#
+# Brute force (check every pair):
+#   O(n²) time, O(1) space — too slow for large inputs
+#
+# There is no O(n log n) middle ground — you either check all pairs O(n²)
+# or use the greedy insight O(n). Two pointers is the only efficient solution.
+
 # ---- Self Reflection: Where I got stuck ----
 # 1. Area formula — thought it was squaring the second largest number.
 #    Key insight: area = width * height, height = min(left, right wall)

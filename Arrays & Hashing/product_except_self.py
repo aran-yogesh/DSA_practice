@@ -73,6 +73,20 @@ def productExceptSelf(nums):
 # Space Complexity: O(n) — left and right arrays
 # ============================================================
 
+# ---- Tradeoffs ----
+# This approach (two separate arrays):
+#   Pro: Easy to understand — build left, build right, multiply
+#   Con: O(n) extra space for the left and right arrays
+#
+# Space-optimized alternative:
+#   Use the output array as the left pass, apply right on-the-fly with a variable
+#   O(n) time, O(1) extra space (output array doesn't count per the problem)
+#   Con: Slightly harder to follow — output array serves two purposes
+#
+# Division trick (not allowed by this problem):
+#   product_all / nums[i] → O(n) time, O(1) space — but fails when zeros exist
+#   The problem explicitly forbids using division
+
 
 if __name__ == "__main__":
     test_cases = [

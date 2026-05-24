@@ -59,6 +59,17 @@ def isValid(s):
 # Space Complexity: O(n) — stack can hold up to n characters
 # ============================================================
 
+# ---- Tradeoffs ----
+# This approach (stack + dictionary):
+#   O(n) time, O(n) space
+#   Pro: General — handles all bracket types with one clean dictionary lookup
+#
+# Counter-based approach (only valid for single bracket type):
+#   Track open count, increment '(', decrement ')' → O(1) space
+#   Con: Breaks immediately with mixed types — cannot detect "([)]" as invalid
+#
+# Stack is the only correct general solution; counters are insufficient
+
 # ---- Self Reflection: Where I got stuck ----
 # 1. Pop logic — thought to pop only when bracket is "wrong".
 #    Fix: always pop when you see a closing bracket, THEN check if it matches.

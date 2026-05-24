@@ -57,6 +57,18 @@ def longestConsecutive(nums):
 # Space Complexity: O(n) — the set
 # ============================================================
 
+# ---- Tradeoffs ----
+# This approach (set + start detection):
+#   Pro: O(n) time despite looking like O(n²) — each number is touched at most twice
+#   Con: O(n) extra space for the set
+#
+# Alternative — Sort first:
+#   Sort → scan for consecutive runs → O(n log n) time, O(1) space
+#   Pro: No extra space  Con: Sorting is the bottleneck; fails the O(n) requirement
+#
+# Key tradeoff: spend O(n) space on the set to save time from O(n log n) → O(n)
+# The problem explicitly requires O(n), so the set approach is necessary
+
 
 if __name__ == "__main__":
     test_cases = [

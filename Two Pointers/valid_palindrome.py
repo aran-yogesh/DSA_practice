@@ -47,6 +47,19 @@ def isPalindrome(s):
 # Space Complexity: O(n) — the cleaned string
 # ============================================================
 
+# ---- Tradeoffs ----
+# This approach (build cleaned string + reverse check):
+#   Pro: Very readable — clean first, then compare
+#   Con: O(n) extra space for the cleaned string
+#
+# True two-pointer alternative (O(1) space):
+#   Keep l and r on original string, skip non-alphanumeric chars inline
+#   Compare lowercased chars directly — never builds a new string
+#   Pro: O(1) space  Con: More code to handle skipping invalid chars
+#
+# For most interviews either is acceptable.
+# If asked to minimize space, use the two-pointer approach on the original string.
+
 
 if __name__ == "__main__":
     test_cases = [

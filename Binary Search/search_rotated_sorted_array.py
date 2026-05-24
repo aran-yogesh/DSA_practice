@@ -83,6 +83,22 @@ def search(nums, target):
 # Space Complexity: O(1)     — only pointers used
 # ============================================================
 
+# ---- Tradeoffs ----
+# This approach (one-pass binary search, check sorted half):
+#   O(log n) time, O(1) space — optimal
+#   Pro: Single pass — finds target and handles rotation at the same time
+#
+# Two-pass alternative:
+#   1. Find the pivot using Find Minimum in Rotated Array (O(log n))
+#   2. Binary search the correct half (O(log n))
+#   Same total O(log n) but two separate passes and more code
+#
+# Linear scan:
+#   O(n) time — fails the O(log n) requirement
+#
+# Key insight: in any rotated array, at least ONE half is always sorted.
+# Identifying the sorted half first lets you safely check target's range.
+
 # ---- Key Insight ----
 # In a rotated array, at least ONE half is always sorted.
 # Check which half is sorted first, then check if target is in that half.

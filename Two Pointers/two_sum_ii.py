@@ -56,6 +56,18 @@ def twoSum(numbers, target):
 # Space Complexity: O(1) — no extra data structures
 # ============================================================
 
+# ---- Tradeoffs ----
+# This approach (two pointers):
+#   Pro: O(n) time, O(1) space — optimal for sorted input
+#   Con: ONLY works because the array is sorted
+#
+# Hashmap alternative:
+#   O(n) time, O(n) space — works on unsorted input too
+#   Not needed here; the problem also explicitly requires O(1) space
+#
+# Rule: sorted array + find pair → two pointers beats hashmap every time
+#       unsorted array + find pair → hashmap is the only O(n) option
+
 
 if __name__ == "__main__":
     test_cases = [

@@ -88,6 +88,20 @@ def trap(height):
 # Space Complexity: O(1) — no extra data structures
 # ============================================================
 
+# ---- Tradeoffs ----
+# This approach (two pointers with running max):
+#   O(n) time, O(1) space — most space-efficient solution
+#   Con: Hardest to understand — requires the "process the bottleneck side" insight
+#
+# Alternative 1 — Precompute max arrays:
+#   Build max_left[] and max_right[] → answer[i] = min(max_left[i], max_right[i]) - height[i]
+#   O(n) time, O(n) space — easier to understand but uses extra memory
+#
+# Alternative 2 — Monotonic stack:
+#   O(n) time, O(n) space — another valid approach, more complex logic
+#
+# Use precompute arrays if readability matters; use two pointers if space matters
+
 # ---- Self Reflection: Where I got stuck ----
 # 1. Initial logic — was comparing immediate neighbours (i and i+1)
 #    instead of the tallest walls on both sides.

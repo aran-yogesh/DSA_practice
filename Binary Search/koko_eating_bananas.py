@@ -75,6 +75,19 @@ def minEatingSpeed(piles, h):
 # Search space is 1 to max(piles) — no point eating faster than biggest pile.
 # For each candidate k (mid), check if it works in <= h hours.
 
+# ---- Tradeoffs ----
+# This approach (binary search on the answer):
+#   O(n log m) time — n piles per check, log m search steps (m = max pile)
+#   O(1) space — generator computes hours on the fly, no extra storage
+#   Pro: Hugely faster than brute force when max pile is large
+#
+# Brute force alternative:
+#   Try every k from 1 to max(piles) → O(n * max(piles)) time
+#   Way too slow when max(piles) reaches 10^9
+#
+# Binary search on answer pattern: when the answer is a value in a range
+# AND checking a candidate is easy (O(n) here), binary search over that range
+
 # ---- Where I Needed Assistance ----
 # 1. What k is — it's the eating speed = mid in binary search
 #    Fix: we're binary searching on the answer, not the input

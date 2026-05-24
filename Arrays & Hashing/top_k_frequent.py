@@ -45,6 +45,19 @@ def topKFrequent(nums, k):
 # Space Complexity: O(n) — hashmap
 # ============================================================
 
+# ---- Tradeoffs ----
+# This approach (hashmap + sort):
+#   Pro: Simple to write; no extra imports needed
+#   Con: O(n log n) — sorts all keys even when k is small
+#
+# Alternative 1 — Heap (heapq.nlargest):
+#   O(n log k) time — only maintains a heap of size k
+#   Better when k << n (e.g., top 5 from 1 million elements)
+#
+# Alternative 2 — Bucket sort:
+#   O(n) time — bucket by frequency (max frequency ≤ n, so bounded)
+#   Con: More code; only worth it if O(n) is explicitly required
+
 
 if __name__ == "__main__":
     test_cases = [

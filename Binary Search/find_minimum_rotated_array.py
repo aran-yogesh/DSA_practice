@@ -70,6 +70,22 @@ def findMin(nums):
 #
 # Simple solution min(nums) works but is O(n) — binary search gives O(log n)
 
+# ---- Tradeoffs ----
+# This approach (binary search, compare mid with r):
+#   O(log n) time, O(1) space — optimal
+#   Pro: Converges cleanly; comparing with r (not l) is the key for rotated arrays
+#
+# min(nums) alternative:
+#   Python built-in → O(n) time, O(1) space — one line but fails O(log n) requirement
+#
+# Find-pivot-then-index alternative:
+#   Binary search for the rotation index, then return nums[pivot]
+#   Same O(log n) time but more thought required — this approach is cleaner
+#
+# Why compare with nums[r] and not nums[l]:
+#   nums[mid] > nums[r] → rotation point is in the right half (min is there)
+#   nums[mid] <= nums[r] → left half is sorted or mid is the min
+
 # ---- Where I Needed Assistance ----
 # 1. Which half has the minimum — compare nums[mid] with nums[r]
 #    If nums[mid] > nums[r] → right half has minimum

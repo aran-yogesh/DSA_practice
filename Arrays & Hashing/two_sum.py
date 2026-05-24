@@ -41,6 +41,19 @@ def twoSum(nums, target):
 # Space Complexity: O(n) — hashmap stores up to n elements
 # ============================================================
 
+# ---- Tradeoffs ----
+# This approach (hashmap, one pass):
+#   Pro: O(n) time — optimal for unsorted input
+#   Con: O(n) extra space for the hashmap
+#
+# Alternative 1 — Brute force:
+#   Check every pair → O(n²) time, O(1) space — too slow for large inputs
+#
+# Alternative 2 — Sort + two pointers:
+#   Sort array, use l/r pointers → O(n log n) time, O(1) space
+#   Con: Sorting destroys original indices (needed for the output here)
+#   Only valid when the problem asks for values, not indices
+
 
 if __name__ == "__main__":
     test_cases = [

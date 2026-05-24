@@ -74,6 +74,18 @@ def searchInsert(nums, target):
 # - That position = insert position
 # So just return l — no extra logic needed!
 
+# ---- Tradeoffs ----
+# This approach (binary search, return l when not found):
+#   O(log n) time, O(1) space — optimal
+#   Pro: No extra logic after the loop — l naturally lands at the insert position
+#
+# Linear scan alternative:
+#   Loop through to find where target fits → O(n) time, O(1) space
+#   Simple to understand but too slow for large sorted arrays
+#
+# Key insight: "return l" instead of "return -1" is the only change from
+# standard binary search. l always ends at the first element > target.
+
 # ---- Where I Needed Assistance ----
 # 1. while l < r vs while l <= r
 #    Fix: must use <= otherwise loop ends too early when l==r

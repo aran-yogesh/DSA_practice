@@ -56,6 +56,21 @@ def search(nums, target):
 # Space Complexity: O(1)     — only three pointers used
 # ============================================================
 
+# ---- Tradeoffs ----
+# This approach (binary search):
+#   O(log n) time, O(1) space — optimal for sorted arrays
+#   Each iteration halves the search space
+#   Con: REQUIRES sorted input — cannot use on unsorted arrays
+#
+# Linear scan alternative:
+#   O(n) time, O(1) space — works on unsorted arrays
+#   Use when: array is small, or array is unsorted
+#   Use binary search when: array is large AND sorted
+#
+# Recursive binary search:
+#   Same O(log n) time but O(log n) space (call stack overhead)
+#   Iterative version here is strictly better — same time, less space
+
 # ---- Self Reflection: Where I got stuck ----
 # 1. Variable naming — used l and r but wrote left and right inside loop.
 #    Fix: be consistent — pick one and stick with it throughout.

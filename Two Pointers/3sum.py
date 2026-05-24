@@ -86,6 +86,19 @@ def threeSum(nums):
 # Space Complexity: O(n)  — output array
 # ============================================================
 
+# ---- Tradeoffs ----
+# This approach (sort + fix one + two pointers):
+#   Pro: Clean duplicate-skipping using sorted order; O(n²) is optimal here
+#
+# HashSet alternative (fix nums[i], use set for pairs):
+#   Same O(n²) time but duplicate handling is messy without sorting
+#   Con: Harder to deduplicate correctly
+#
+# Brute force (three nested loops):
+#   O(n³) time — too slow; never use for large inputs
+#
+# Sorting is the key unlock: makes duplicates adjacent and enables two pointers
+
 
 if __name__ == "__main__":
     test_cases = [
