@@ -183,4 +183,5 @@ When loop ends, curr is None. prev is the new head.
 ## Problems solved
 | # | Problem | Difficulty |
 |---|---|---|
-| 206 | Reverse Linked List | Easy |
+| 206 | Reverse Linked List    | Easy |
+| 21  | Merge Two Sorted Lists | Easy |
