@@ -119,3 +119,4 @@ The `+1` is always needed when counting indices inclusive on both ends.
 | 3   | Longest Substring Without Repeating Characters | Variable | Medium |
 | 121 | Best Time to Buy and Sell Stock               | Variable | Easy   |
 | 424 | Longest Repeating Character Replacement       | Variable | Medium |
+| 567 | Permutation in String                         | Fixed    | Medium |
