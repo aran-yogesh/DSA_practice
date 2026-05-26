@@ -185,4 +185,5 @@ When loop ends, curr is None. prev is the new head.
 |---|---|---|
 | 206 | Reverse Linked List    | Easy |
 | 21  | Merge Two Sorted Lists | Easy |
-| 141 | Linked List Cycle      | Easy |
+| 141 | Linked List Cycle      | Easy   |
+| 2   | Add Two Numbers        | Medium |
