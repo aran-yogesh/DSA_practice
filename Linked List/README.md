@@ -187,3 +187,4 @@ When loop ends, curr is None. prev is the new head.
 | 21  | Merge Two Sorted Lists | Easy |
 | 141 | Linked List Cycle      | Easy   |
 | 2   | Add Two Numbers        | Medium |
+| 143 | Reorder List           | Medium |
